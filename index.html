@@ -23,7 +23,7 @@
   .bx{position:relative;flex:1 1 165px;min-width:155px;max-width:195px;background:rgba(255,255,255,.12);
     border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:16px 12px;display:flex;
     flex-direction:column;align-items:center;gap:9px}
-  .chrome{--c:#4285F4}.firefox{--c:#ff7139}.edge{--c:#0e8f93}
+  .chrome{--c:#4285F4}.firefox{--c:#ff7139}
   .badge{width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;
     justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.25)}
   .globe{width:34px;height:34px;stroke:var(--c)}
@@ -90,19 +90,6 @@
         <a class="go" href="https://github.com/myalsh2030/rayatauto-firefox/releases/latest/download/rayatauto-latest.xpi">⬇ تثبيت</a>
       </div>
 
-      <div class="bx edge" data-b="edge">
-        <span class="reco-badge">موصى به لمتصفّحك</span>
-        <div class="badge">
-          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
-            <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/>
-            <path d="M12 2.5c3 2.8 3 16.2 0 19"/><path d="M12 2.5c-3 2.8-3 16.2 0 19"/>
-          </svg>
-        </div>
-        <div class="bn">Microsoft Edge</div>
-        <div class="bnote">من متجر كروم — فعّل «السماح بإضافات من متاجر أخرى» مرّة واحدة</div>
-        <a class="go" href="https://chromewebstore.google.com/detail/rayatauto-%E2%80%94-%D9%85%D9%8F%D8%AF%D8%AE%D9%90%D9%84-%D8%A7%D9%84%D8%B4%D9%8F%D9%91%D8%B9/dpihkndbaonpfajfgddbgbjcklgjgchl" target="_blank" rel="noopener">⬇ تثبيت</a>
-      </div>
-
     </div>
 
     <a class="tpl" href="RayatAuto-data-template.xlsx" download>⬇ قالب إدخال البيانات (Excel)</a>
@@ -133,9 +120,8 @@
   <script>
     (function(){
       var ua = navigator.userAgent, b = '';
-      if (/Edg\//.test(ua)) b = 'edge';
-      else if (/Firefox\//.test(ua)) b = 'firefox';
-      else if (/Chrome\//.test(ua) || /CriOS\//.test(ua)) b = 'chrome';
+      if (/Firefox\//.test(ua)) b = 'firefox';
+      else if (/Chrome\//.test(ua) || /CriOS\//.test(ua) || /Edg\//.test(ua)) b = 'chrome';
       if (b) {
         var el = document.querySelector('.bx[data-b="' + b + '"]');
         if (el) { el.classList.add('reco'); var p = el.parentNode; p.insertBefore(el, p.firstChild); }
