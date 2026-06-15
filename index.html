@@ -3,32 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RayatAuto — تثبيت إضافة Firefox</title>
+<title>RayatAuto — تثبيت الإضافة</title>
 <link rel="icon" type="image/png" href="icon128.png">
 <link rel="apple-touch-icon" href="icon128.png">
 <style>
-  :root{--blue:#1f6feb}
   *{box-sizing:border-box}
   body{margin:0;min-height:100vh;font-family:'Segoe UI','Tajawal','Cairo',Tahoma,Arial,sans-serif;
     color:#fff;display:flex;align-items:center;justify-content:center;padding:24px;
     background:linear-gradient(135deg,#2f7cff 0%,#1f6feb 45%,#163e9e 100%)}
   .card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);border-radius:18px;
-    max-width:560px;width:100%;padding:34px 30px;text-align:center;backdrop-filter:blur(6px);
+    max-width:640px;width:100%;padding:34px 30px;text-align:center;backdrop-filter:blur(6px);
     box-shadow:0 24px 60px rgba(0,0,0,.30)}
-  img{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+  img.logo{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
   h1{margin:16px 0 4px;font-size:30px;font-weight:800}
-  .sub{opacity:.92;font-size:16px;margin-bottom:22px}
-  .btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#1746b8;text-decoration:none;
-    font-weight:800;font-size:18px;padding:14px 28px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
-  .btn:hover{filter:brightness(.97)}
-  .btn2{display:inline-flex;align-items:center;gap:9px;margin-top:12px;background:rgba(255,255,255,.14);
+  .sub{opacity:.92;font-size:16px;margin-bottom:20px}
+  .pick{font-size:15px;font-weight:700;margin:4px 0 14px;opacity:.95}
+
+  .browsers{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .bx{position:relative;flex:1 1 165px;min-width:155px;max-width:195px;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:16px 12px;display:flex;
+    flex-direction:column;align-items:center;gap:9px}
+  .chrome{--c:#4285F4}.firefox{--c:#ff7139}.edge{--c:#0e8f93}
+  .badge{width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;
+    justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+  .globe{width:34px;height:34px;stroke:var(--c)}
+  .bn{font-weight:800;font-size:15px}
+  .bnote{font-size:11.5px;opacity:.86;line-height:1.7;min-height:46px}
+  a.go{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;color:#fff;
+    font-weight:800;font-size:14px;padding:10px 14px;border-radius:10px;width:100%;background:var(--c);
+    box-shadow:0 6px 16px rgba(0,0,0,.25)}
+  a.go:hover{filter:brightness(1.06)}
+  .bx.reco{border-color:#ffe08a;box-shadow:0 0 0 2px rgba(255,224,138,.55)}
+  .reco-badge{display:none;position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+    background:#ffe08a;color:#5a3d00;font-size:11px;font-weight:800;padding:2px 11px;border-radius:20px;
+    white-space:nowrap}
+  .bx.reco .reco-badge{display:block}
+
+  .tpl{display:inline-flex;align-items:center;gap:9px;margin-top:18px;background:rgba(255,255,255,.14);
     color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:11px 22px;border-radius:11px;
     border:1px solid rgba(255,255,255,.55)}
-  .btn2:hover{background:rgba(255,255,255,.22)}
-  .note{margin-top:22px;font-size:13px;opacity:.9;line-height:1.9;text-align:right}
+  .tpl:hover{background:rgba(255,255,255,.22)}
+
+  .note{margin-top:20px;font-size:13px;opacity:.92;line-height:1.95;text-align:right}
   .note b{color:#ffe08a}
-  ol{padding-inline-start:0;margin:8px 0 0}
-  li{margin:5px 0}
   .credits{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.25);
     font-size:14px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
   .credits b{font-weight:800}
@@ -36,32 +53,63 @@
   .credits .sep{opacity:.5}
   .ff{margin-top:16px;font-size:12.5px;opacity:.8}
   a.link{color:#ffe08a}
-  hr{border:0;border-top:1px solid rgba(255,255,255,.25);margin:20px 0}
 </style>
 </head>
 <body>
   <div class="card">
-    <img src="icon128.png" alt="RayatAuto">
-    <h1>RayatAuto لـ Firefox</h1>
+    <img class="logo" src="icon128.png" alt="RayatAuto">
+    <h1>RayatAuto</h1>
     <div class="sub">أتمتة إدخال وتعديل الشُّعب في رايات (Banner SSASECT)</div>
 
-    <a class="btn" href="https://github.com/myalsh2030/rayatauto-firefox/releases/latest/download/rayatauto-latest.xpi">
-      ⬇ تثبيت الإضافة على Firefox
-    </a>
+    <div class="pick">اختر إضافة متصفّحك:</div>
+    <div class="browsers" id="browsers">
 
-    <a class="btn2" href="RayatAuto-data-template.xlsx" download>
-      ⬇ قالب إدخال البيانات (Excel)
-    </a>
+      <div class="bx chrome" data-b="chrome">
+        <span class="reco-badge">موصى به لمتصفّحك</span>
+        <div class="badge">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/>
+            <path d="M12 2.5c3 2.8 3 16.2 0 19"/><path d="M12 2.5c-3 2.8-3 16.2 0 19"/>
+          </svg>
+        </div>
+        <div class="bn">Google Chrome</div>
+        <div class="bnote">من متجر كروم الرسمي · تحديث تلقائي</div>
+        <a class="go" href="https://chromewebstore.google.com/detail/rayatauto-%E2%80%94-%D9%85%D9%8F%D8%AF%D8%AE%D9%90%D9%84-%D8%A7%D9%84%D8%B4%D9%8F%D9%91%D8%B9/dpihkndbaonpfajfgddbgbjcklgjgchl" target="_blank" rel="noopener">⬇ تثبيت</a>
+      </div>
+
+      <div class="bx firefox" data-b="firefox">
+        <span class="reco-badge">موصى به لمتصفّحك</span>
+        <div class="badge">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/>
+            <path d="M12 2.5c3 2.8 3 16.2 0 19"/><path d="M12 2.5c-3 2.8-3 16.2 0 19"/>
+          </svg>
+        </div>
+        <div class="bn">Mozilla Firefox</div>
+        <div class="bnote">موقّعة من Mozilla · تحديث تلقائي · Firefox 140 فأحدث</div>
+        <a class="go" href="https://github.com/myalsh2030/rayatauto-firefox/releases/latest/download/rayatauto-latest.xpi">⬇ تثبيت</a>
+      </div>
+
+      <div class="bx edge" data-b="edge">
+        <span class="reco-badge">موصى به لمتصفّحك</span>
+        <div class="badge">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/>
+            <path d="M12 2.5c3 2.8 3 16.2 0 19"/><path d="M12 2.5c-3 2.8-3 16.2 0 19"/>
+          </svg>
+        </div>
+        <div class="bn">Microsoft Edge</div>
+        <div class="bnote">من متجر كروم — فعّل «السماح بإضافات من متاجر أخرى» مرّة واحدة</div>
+        <a class="go" href="https://chromewebstore.google.com/detail/rayatauto-%E2%80%94-%D9%85%D9%8F%D8%AF%D8%AE%D9%90%D9%84-%D8%A7%D9%84%D8%B4%D9%8F%D9%91%D8%B9/dpihkndbaonpfajfgddbgbjcklgjgchl" target="_blank" rel="noopener">⬇ تثبيت</a>
+      </div>
+
+    </div>
+
+    <a class="tpl" href="RayatAuto-data-template.xlsx" download>⬇ قالب إدخال البيانات (Excel)</a>
 
     <div class="note">
-      <b>التثبيت (نقرة واحدة):</b>
-      <ol>
-        <li>١) افتح هذه الصفحة بمتصفّح <b>Firefox</b> (نسخة 140 فأحدث).</li>
-        <li>٢) اضغط زر «تثبيت الإضافة».</li>
-        <li>٣) اضغط «إضافة / Add» في نافذة الإذن التي تظهر.</li>
-      </ol>
-      <hr>
-      ✅ الإضافة موقَّعة من Mozilla، و<b>تتحدّث تلقائياً</b> عند صدور نسخة جديدة — لا حاجة لإعادة التثبيت.
+      <b>بعد الضغط على «تثبيت»:</b> وافق على «إضافة / Add» في نافذة المتصفّح. ✅ كل النسخ <b>تتحدّث تلقائياً</b> — لا حاجة لإعادة التثبيت.
+      <br>ثم افتح موقع رايات، اضغط أيقونة الإضافة لإظهار اللوحة، وابدأ. للبيانات: استعن بـ«قالب الإكسل» أعلاه.
     </div>
 
     <div class="credits">
@@ -81,5 +129,18 @@
       <a class="link" href="privacy.html">سياسة الخصوصية</a>
     </div>
   </div>
+
+  <script>
+    (function(){
+      var ua = navigator.userAgent, b = '';
+      if (/Edg\//.test(ua)) b = 'edge';
+      else if (/Firefox\//.test(ua)) b = 'firefox';
+      else if (/Chrome\//.test(ua) || /CriOS\//.test(ua)) b = 'chrome';
+      if (b) {
+        var el = document.querySelector('.bx[data-b="' + b + '"]');
+        if (el) { el.classList.add('reco'); var p = el.parentNode; p.insertBefore(el, p.firstChild); }
+      }
+    })();
+  </script>
 </body>
 </html>
