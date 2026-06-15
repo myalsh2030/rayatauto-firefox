@@ -5,7 +5,7 @@
         {
           "version": "1.0.0",
           "update_link": "https://github.com/myalsh2030/rayatauto-firefox/releases/download/v1.0.0/rayatauto-1.0.0.xpi",
-          "applications": { "gecko": { "strict_min_version": "128.0" } }
+          "applications": { "gecko": { "strict_min_version": "140.0" } }
         }
       ]
     }
