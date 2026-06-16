@@ -6,43 +6,50 @@
 <title>RayatAuto — تثبيت الإضافة</title>
 <link rel="icon" type="image/png" href="icon128.png">
 <link rel="apple-touch-icon" href="icon128.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;font-family:'Segoe UI','Tajawal','Cairo',Tahoma,Arial,sans-serif;
+  body{margin:0;min-height:100vh;font-family:'Noto Kufi Arabic','Segoe UI','Tajawal',Tahoma,Arial,sans-serif;
     color:#fff;display:flex;align-items:center;justify-content:center;padding:24px;
     background:linear-gradient(135deg,#2f7cff 0%,#1f6feb 45%,#163e9e 100%)}
   .card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);border-radius:18px;
-    max-width:640px;width:100%;padding:34px 30px;text-align:center;backdrop-filter:blur(6px);
+    max-width:600px;width:100%;padding:34px 30px;text-align:center;backdrop-filter:blur(6px);
     box-shadow:0 24px 60px rgba(0,0,0,.30)}
   img.logo{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
-  h1{margin:16px 0 4px;font-size:30px;font-weight:800}
+  h1{margin:16px 0 4px;font-size:30px;font-weight:900}
   .sub{opacity:.92;font-size:16px;margin-bottom:20px}
-  .pick{font-size:15px;font-weight:700;margin:4px 0 14px;opacity:.95}
+  .pick{font-size:15px;font-weight:800;margin:4px 0 14px;opacity:.95}
 
-  .browsers{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-  .bx{position:relative;flex:1 1 165px;min-width:155px;max-width:195px;background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:16px 12px;display:flex;
-    flex-direction:column;align-items:center;gap:9px}
-  .chrome{--c:#4285F4}.firefox{--c:#ff7139}
-  .badge{width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;
-    justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.25)}
-  .globe{width:34px;height:34px;stroke:var(--c)}
-  .bn{font-weight:800;font-size:15px}
-  .bnote{font-size:11.5px;opacity:.86;line-height:1.7;min-height:46px}
+  .browsers{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .bx{position:relative;flex:1 1 180px;min-width:165px;max-width:215px;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:18px 14px;display:flex;
+    flex-direction:column;align-items:center;gap:10px}
+  .chrome{--c:#1A73E8}.firefox{--c:#ff7139}
+  .badge{width:60px;height:60px;border-radius:50%;background:#fff;display:flex;align-items:center;
+    justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.28)}
+  .bn{font-weight:800;font-size:15.5px}
+  .bnote{font-size:12px;opacity:.86;line-height:1.75;min-height:44px}
   a.go{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;color:#fff;
-    font-weight:800;font-size:14px;padding:10px 14px;border-radius:10px;width:100%;background:var(--c);
+    font-weight:800;font-size:14.5px;padding:11px 14px;border-radius:10px;width:100%;background:var(--c);
     box-shadow:0 6px 16px rgba(0,0,0,.25)}
-  a.go:hover{filter:brightness(1.06)}
+  a.go:hover{filter:brightness(1.07)}
   .bx.reco{border-color:#ffe08a;box-shadow:0 0 0 2px rgba(255,224,138,.55)}
   .reco-badge{display:none;position:absolute;top:-11px;left:50%;transform:translateX(-50%);
     background:#ffe08a;color:#5a3d00;font-size:11px;font-weight:800;padding:2px 11px;border-radius:20px;
     white-space:nowrap}
   .bx.reco .reco-badge{display:block}
 
-  .tpl{display:inline-flex;align-items:center;gap:9px;margin-top:18px;background:rgba(255,255,255,.14);
-    color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:11px 22px;border-radius:11px;
-    border:1px solid rgba(255,255,255,.55)}
-  .tpl:hover{background:rgba(255,255,255,.22)}
+  .tplwrap{margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:5px}
+  .tpl{display:inline-flex;align-items:center;gap:9px;background:#107C41;
+    color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:11px 22px;border-radius:11px;
+    box-shadow:0 6px 16px rgba(0,0,0,.25)}
+  .tpl:hover{filter:brightness(1.07)}
+  .vid{display:inline-flex;align-items:center;gap:9px;background:#FF0000;color:#fff;text-decoration:none;
+    font-weight:800;font-size:15px;padding:11px 22px;border-radius:11px;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+  .vid:hover{filter:brightness(1.08)}
+  .upd{font-size:11px;opacity:.8}
 
   .note{margin-top:20px;font-size:13px;opacity:.92;line-height:1.95;text-align:right}
   .note b{color:#ffe08a}
@@ -67,35 +74,67 @@
       <div class="bx chrome" data-b="chrome">
         <span class="reco-badge">موصى به لمتصفّحك</span>
         <div class="badge">
-          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
-            <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/>
-            <path d="M12 2.5c3 2.8 3 16.2 0 19"/><path d="M12 2.5c-3 2.8-3 16.2 0 19"/>
+          <svg viewBox="0 0 48 48" width="42" height="42" aria-label="Google Chrome">
+            <circle cx="24" cy="24" r="22" fill="#fff"/>
+            <path d="M24 24 L4.95 13 A22 22 0 0 1 43.05 13 Z" fill="#EA4335"/>
+            <path d="M24 24 L43.05 13 A22 22 0 0 1 24 46 Z" fill="#FBBC05"/>
+            <path d="M24 24 L24 46 A22 22 0 0 1 4.95 13 Z" fill="#34A853"/>
+            <circle cx="24" cy="24" r="11.5" fill="#fff"/>
+            <circle cx="24" cy="24" r="9" fill="#1A73E8"/>
           </svg>
         </div>
         <div class="bn">Google Chrome</div>
         <div class="bnote">من متجر كروم الرسمي · تحديث تلقائي</div>
         <a class="go" href="https://chromewebstore.google.com/detail/rayatauto-%E2%80%94-%D9%85%D9%8F%D8%AF%D8%AE%D9%90%D9%84-%D8%A7%D9%84%D8%B4%D9%8F%D9%91%D8%B9/dpihkndbaonpfajfgddbgbjcklgjgchl" target="_blank" rel="noopener">⬇ تثبيت</a>
+        <div class="upd">الإصدار 1.1.0 · آخر تحديث 2026-06-16</div>
       </div>
 
       <div class="bx firefox" data-b="firefox">
         <span class="reco-badge">موصى به لمتصفّحك</span>
         <div class="badge">
-          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
-            <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/>
-            <path d="M12 2.5c3 2.8 3 16.2 0 19"/><path d="M12 2.5c-3 2.8-3 16.2 0 19"/>
+          <svg viewBox="0 0 48 48" width="40" height="40" aria-label="Mozilla Firefox">
+            <defs><linearGradient id="ff" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#B5279A"/><stop offset=".35" stop-color="#FF3B30"/>
+              <stop offset=".7" stop-color="#FF980E"/><stop offset="1" stop-color="#FFEA00"/>
+            </linearGradient></defs>
+            <path fill="url(#ff)" d="M24 4 c -6 8 -3 12 -3 14 c 0 3 -2 4 -4 4 c -1 0 -2 -1 -2 -3
+              c -4 4 -5 9 -3 13 c 2 5 7 8 12 8 c 7 0 13 -5 13 -13 c 0 -7 -4 -11 -7 -16
+              c -1 3 -3 4 -5 4 c 2 -6 0 -12 -4 -15 z"/>
           </svg>
         </div>
         <div class="bn">Mozilla Firefox</div>
         <div class="bnote">موقّعة من Mozilla · تحديث تلقائي · Firefox 140 فأحدث</div>
         <a class="go" href="https://github.com/myalsh2030/rayatauto-firefox/releases/latest/download/rayatauto-latest.xpi">⬇ تثبيت</a>
+        <div class="upd">الإصدار 1.1.0 · آخر تحديث 2026-06-16</div>
       </div>
 
     </div>
 
-    <a class="tpl" href="RayatAuto-data-template.xlsx" download>⬇ قالب إدخال البيانات (Excel)</a>
+    <div class="tplwrap" style="margin-top:20px">
+      <a class="vid" href="https://youtu.be/NhKIsCRijrE" target="_blank" rel="noopener">
+        <svg viewBox="0 0 28 20" width="26" height="19" aria-hidden="true" style="flex:0 0 auto">
+          <rect width="28" height="20" rx="6" fill="#fff"/>
+          <path d="M11 5.5 L20.5 10 L11 14.5 Z" fill="#FF0000"/>
+        </svg>
+        شرح الأداة بالفيديو
+      </a>
+    </div>
+
+    <div class="tplwrap">
+      <a class="tpl" href="RayatAuto-data-template.xlsx" download>
+        <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" style="flex:0 0 auto">
+          <rect x="3.5" y="3" width="17" height="18" rx="2.2" fill="#fff"/>
+          <path d="M3.5 8.5h17M3.5 13h17M3.5 17.5h17" stroke="#BFE3CC" stroke-width="1"/>
+          <path d="M9 3v18M14.5 3v18" stroke="#BFE3CC" stroke-width="1"/>
+          <path d="M7.6 9.6l3.3 4.8M10.9 9.6l-3.3 4.8" stroke="#107C41" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        قالب إدخال البيانات (Excel)
+      </a>
+      <div class="upd">آخر تحديث: 2026-06-16</div>
+    </div>
 
     <div class="note">
-      <b>بعد الضغط على «تثبيت»:</b> وافق على «إضافة / Add» في نافذة المتصفّح. ✅ كل النسخ <b>تتحدّث تلقائياً</b> — لا حاجة لإعادة التثبيت.
+      <b>بعد الضغط على «تثبيت»:</b> وافق على «إضافة / Add» في نافذة المتصفّح. ✅ النسختان <b>تتحدّثان تلقائياً</b> — لا حاجة لإعادة التثبيت.
       <br>ثم افتح موقع رايات، اضغط أيقونة الإضافة لإظهار اللوحة، وابدأ. للبيانات: استعن بـ«قالب الإكسل» أعلاه.
     </div>
 
