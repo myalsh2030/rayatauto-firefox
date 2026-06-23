@@ -15,17 +15,17 @@
     color:#fff;display:flex;align-items:center;justify-content:center;padding:24px;
     background:linear-gradient(135deg,#2f7cff 0%,#1f6feb 45%,#163e9e 100%)}
   .card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);border-radius:18px;
-    max-width:600px;width:100%;padding:34px 30px;text-align:center;backdrop-filter:blur(6px);
+    max-width:960px;width:100%;padding:34px 30px;text-align:center;backdrop-filter:blur(6px);
     box-shadow:0 24px 60px rgba(0,0,0,.30)}
   img.logo{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
   h1{margin:16px 0 4px;font-size:30px;font-weight:900}
   .sub{opacity:.92;font-size:16px;margin-bottom:20px}
   .pick{font-size:15px;font-weight:800;margin:4px 0 14px;opacity:.95}
 
-  .browsers{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-  .bx{position:relative;flex:1 1 180px;min-width:165px;max-width:215px;background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:18px 14px;display:flex;
-    flex-direction:column;align-items:center;gap:10px}
+  .browsers{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+  .bx{position:relative;flex:1 1 260px;min-width:220px;max-width:370px;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:22px 18px;display:flex;
+    flex-direction:column;align-items:center;gap:12px}
   .chrome{--c:#1A73E8}.firefox{--c:#ff7139}
   .badge{width:60px;height:60px;border-radius:50%;background:#fff;display:flex;align-items:center;
     justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.28)}
@@ -41,15 +41,29 @@
     white-space:nowrap}
   .bx.reco .reco-badge{display:block}
 
-  .tplwrap{margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:5px}
-  .tpl{display:inline-flex;align-items:center;gap:9px;background:#107C41;
-    color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:11px 22px;border-radius:11px;
-    box-shadow:0 6px 16px rgba(0,0,0,.25)}
-  .tpl:hover{filter:brightness(1.07)}
-  .vid{display:inline-flex;align-items:center;gap:9px;background:#FF0000;color:#fff;text-decoration:none;
-    font-weight:800;font-size:15px;padding:11px 22px;border-radius:11px;box-shadow:0 6px 16px rgba(0,0,0,.25)}
-  .vid:hover{filter:brightness(1.08)}
-  .upd{font-size:11px;opacity:.8}
+  .links-section{margin-top:22px;display:flex;flex-direction:column;gap:14px;width:100%}
+  .links-row{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px;width:100%}
+  .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+    color:#fff;font-weight:800;font-size:14px;padding:12px 42px 12px 14px;border-radius:11px;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);transition:all .2s;width:100%;min-height:54px}
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);flex:0 0 auto}
+  .btn.xls{background:#107C41}
+  .btn.yt{background:#FF0000}
+  .btn.info{background:#1E5CB3}
+  .btn .desc{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .btn .subtext{font-size:11px;font-weight:400;opacity:.88;margin-top:2px}
+  .btn-placeholder{visibility:hidden}
+  @media(max-width:768px){
+    .links-row{grid-template-columns:1fr}
+    .btn-placeholder{display:none}
+  }
+
+  .asc-section{margin-top:26px;width:100%}
+  .asc-label{font-size:15px;font-weight:800;color:#ffe08a;text-align:center;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    line-height:1.45;width:100%;min-height:48px}
+  .asc-row .btn{font-size:13px;padding:10px 12px;min-height:48px}
 
   .note{margin-top:20px;font-size:13px;opacity:.92;line-height:1.95;text-align:right}
   .note b{color:#ffe08a}
@@ -110,27 +124,74 @@
 
     </div>
 
-    <div class="tplwrap" style="margin-top:20px">
-      <a class="vid" href="https://youtu.be/NhKIsCRijrE" target="_blank" rel="noopener">
-        <svg viewBox="0 0 28 20" width="26" height="19" aria-hidden="true" style="flex:0 0 auto">
-          <rect width="28" height="20" rx="6" fill="#fff"/>
-          <path d="M11 5.5 L20.5 10 L11 14.5 Z" fill="#FF0000"/>
-        </svg>
-        شرح الأداة بالفيديو
-      </a>
-    </div>
+    <div class="links-section">
+      <!-- الصف الأول: الأداة الأساسية -->
+      <div class="links-row">
+        <!-- الخلية اليمنى فارغة -->
+        <div class="btn-placeholder"></div>
 
-    <div class="tplwrap">
-      <a class="tpl" href="RayatAuto-data-template.xlsx" download>
-        <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" style="flex:0 0 auto">
-          <rect x="3.5" y="3" width="17" height="18" rx="2.2" fill="#fff"/>
-          <path d="M3.5 8.5h17M3.5 13h17M3.5 17.5h17" stroke="#BFE3CC" stroke-width="1"/>
-          <path d="M9 3v18M14.5 3v18" stroke="#BFE3CC" stroke-width="1"/>
-          <path d="M7.6 9.6l3.3 4.8M10.9 9.6l-3.3 4.8" stroke="#107C41" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        قالب إدخال البيانات (Excel)
-      </a>
-      <div class="upd">آخر تحديث: 2026-06-16</div>
+        <!-- الخلية الوسطى: شرح الأداة بالفيديو -->
+        <a class="btn yt" href="https://youtu.be/NhKIsCRijrE" target="_blank" rel="noopener">
+          <svg viewBox="0 0 28 20" width="26" height="19" aria-hidden="true" style="flex:0 0 auto">
+            <rect width="28" height="20" rx="6" fill="#fff"/>
+            <path d="M11 5.5 L20.5 10 L11 14.5 Z" fill="#FF0000"/>
+          </svg>
+          <div class="desc">
+            <span>شرح الأداة بالفيديو</span>
+          </div>
+        </a>
+
+        <!-- الخلية اليسرى: قالب إدخال البيانات -->
+        <a class="btn xls" href="RayatAuto-data-template.xlsx" download>
+          <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" style="flex:0 0 auto">
+            <rect x="3.5" y="3" width="17" height="18" rx="2.2" fill="#fff"/>
+            <path d="M3.5 8.5h17M3.5 13h17M3.5 17.5h17" stroke="#BFE3CC" stroke-width="1"/>
+            <path d="M9 3v18M14.5 3v18" stroke="#BFE3CC" stroke-width="1"/>
+            <path d="M7.6 9.6l3.3 4.8M10.9 9.6l-3.3 4.8" stroke="#107C41" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div class="desc">
+            <span>قالب إدخال البيانات (Excel)</span>
+            <span class="subtext">آخر تحديث: 2026-06-16</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- القسم الخاص بـ aScTimetables -->
+      <div class="asc-section">
+        <div class="links-row asc-row">
+          <!-- الخلية اليمنى: عنوان القسم كنص على سطرين بدلاً من الزر -->
+          <div class="asc-label">
+            <span>دعم الاستيراد من</span>
+            <span>برنامج aScTimetables</span>
+          </div>
+
+          <!-- الخلية الوسطى: شرح فيديو الاستيراد من aScTimetables -->
+          <a class="btn yt" href="https://youtu.be/LXH8m2vGlj4" target="_blank" rel="noopener">
+            <svg viewBox="0 0 28 20" width="26" height="19" aria-hidden="true" style="flex:0 0 auto">
+              <rect width="28" height="20" rx="6" fill="#fff"/>
+              <path d="M11 5.5 L20.5 10 L11 14.5 Z" fill="#FF0000"/>
+            </svg>
+            <div class="desc">
+              <span>شرح فيديو الاستيراد من</span>
+              <span>aScTimetables</span>
+            </div>
+          </a>
+
+          <!-- الخلية اليسرى: قالب إدخال البيانات داعم للاستيراد -->
+          <a class="btn xls" href="RayatAuto-data-template-6.xlsm" download>
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" style="flex:0 0 auto">
+              <rect x="3.5" y="3" width="17" height="18" rx="2.2" fill="#fff"/>
+              <path d="M3.5 8.5h17M3.5 13h17M3.5 17.5h17" stroke="#BFE3CC" stroke-width="1"/>
+              <path d="M9 3v18M14.5 3v18" stroke="#BFE3CC" stroke-width="1"/>
+              <path d="M7.6 9.6l3.3 4.8M10.9 9.6l-3.3 4.8" stroke="#107C41" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <div class="desc">
+              <span>قالب إدخال البيانات (Excel)</span>
+              <span class="subtext">داعم للاستيراد من aScTimetables</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="note">
