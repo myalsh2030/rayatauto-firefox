@@ -3,9 +3,9 @@
     "@rayatauto": {
       "updates": [
         {
-          "version": "1.1.0",
-          "update_link": "https://github.com/myalsh2030/rayatauto-firefox/releases/download/v1.1.0/rayatauto-1.1.0.xpi",
-          "update_hash": "sha256:29d12541cc74d20f41c2f7925e23450c1ad7c37a71bf44db2c9f3173f5501fc4",
+          "version": "1.2.0",
+          "update_link": "https://github.com/myalsh2030/rayatauto-firefox/releases/download/v1.2.0/rayatauto-1.2.0.xpi",
+          "update_hash": "sha256:3f167974a2c6f8b413455d697f42621db203127b8698323dc67a5eb69911d1a6",
           "applications": { "gecko": { "strict_min_version": "140.0" } }
         }
       ]
